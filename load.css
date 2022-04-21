@@ -92,6 +92,181 @@
     }
 }
 
+.loader.--4::before{
+    width: 6vmin;
+    height: var(--size-bar);
+    background-color: var(--color);
+    animation: loader-4 0.8s cubic-bezier(0, 0, 0.03, 0.9) infinite;
+}
+@keyframes loader-4 {
+    0%, 44%, 88.1%, 100% {
+        transform-origin: left;
+    }
+    0%, 100%, 88% {
+        transform: scaleX(0);
+    }
+    44.1%, 88% {
+        transform-origin: right;
+    }
+    33%, 44% {
+        transform: scaleX(1);
+    }
+    
+}
+
+.loader.--5::before, 
+.loader.--5::after {
+    height: 3vmin;
+    width: var(--size-bar);
+    background-color: var(--color);
+    animation: loader-5 0.6s cubic-bezier(0,0,0.03, 0.9) infinite;
+}
+.loader.--5::before{
+    left:  calc(50% - 1vmin);
+    top: calc(50% - 3vmin);
+}
+.loader.--5::after{
+    left: calc(50% + 1vmin);
+    top: calc(50% - 1vmin);
+    animation-delay: 0.2s;
+}
+@keyframes loader-5 {
+    0%, 88%, 100% {
+        opacity: 0;
+    }
+    0% {
+        transform: scaleY(-6vmin);
+    }
+    33% {
+        opacity: 1;
+    }
+    33%, 88% {
+        transform: scaleY(3vmin);
+    }
+}
+
+.loader.--6::before{
+    width: var(--size-square);
+    height: var(--size-square);
+    background-color: var(--color);
+    top: calc(50% - var(--size-square));
+    left: calc(50% - var(--size-square));
+    animation: loader-6 2.4s cubic-bezier(0,0, 0.24, 1.21) infinite;
+}
+@keyframes loader-6 {
+    0%, 100% {
+        transform: none;
+    }
+    25%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(100%) translateY(100%);
+    }
+    75% {
+        transform: translateY(100%);
+    }
+}
+
+.loader.--7::before,
+.loader.--7::after{
+    width: var(--size-square);
+    height: var(--size-square);
+    background-color: var(--color);
+}
+.loader.--7::before{
+    top: calc(50% - var(--size-square));
+    left: calc(50% - var(--size-square));
+    animation: loader-6 2.4s cubic-bezier(0,0,0.24,1.21) infinite;
+}
+.loader.--7::after{
+    top: 50%;
+    left: 50%;
+    animation: loader-7 2.4s cubic-bezier(0,0,0.24,1.21) infinite;
+}
+@keyframes loader-7 {
+    0%, 100% {
+        transform: none;
+    }
+    25%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(100%) translateY(100%);
+    }
+    75% {
+        transform: translateY(100%);
+    }
+}
+
+.loader.--8::before {
+    top: calc(50% + 4vmin);
+    animation: loader-8-1 0.8s cubic-bezier(0.06,0.01,0.49,1.18) infinite;
+}
+.loader.--8::after {
+    opacity: 0;
+    top: calc(50% - 2vmin);
+    animation: loader-8-2 0.8s cubic-bezier(0.46,-0.1,0.27,1.07) 0.2s infinite;
+}
+@keyframes loader-8-1 {
+    0%, 55%, 100% {
+        opacity: 0;
+    }
+    0% {
+        transform: scale(0.2);
+    }
+    22%{
+        opacity: 1;
+    }
+    33%, 55% {
+        transform: scale(1) translateY(-6vmin);
+    }
+}
+@keyframes loader-8-2 {
+    0%, 100% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 0.3;
+    }
+    0%{
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(4);
+    }
+}
+
+.loader.--9::before,
+.loader.--9::after {
+    width: var(--size-dot);
+    height: var(--size-dot);
+    background-color: var(--color);
+    border-radius: 50%;
+    animation: loader-9 0.42s cubic-bezier(0.39,0.31, 0, 1.11) infinite;
+}
+.loader.--9::before{
+    left: calc(50% - var(--size-dot));
+}
+.loader.--9::after{
+    left: calc(50% + 1.6vmin);
+    animation-delay: 0.12s;
+}
+@keyframes loader-9 {
+    0%, 100% {
+        opacity: 0;
+    }
+    0% {
+        transform: translate(-4vmin, -4vmin);
+    }
+    66%{
+        opacity: 1;
+    }
+    66%, 100% {
+        transform: none;
+    }
+}
+
 .container{
 display: grid;
 grid-template-columns: repeat(3, 18vmin);
